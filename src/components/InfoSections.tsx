@@ -61,7 +61,7 @@ const InfoSections = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <img src={FLEET_IMAGE} alt="Наш автопарк" className="w-full rounded shadow-xl object-cover" style={{ maxHeight: 420 }} />
+              <img src={FLEET_IMAGE} alt="Автопарк эвакуаторов компании АвтоЭвакуатор — 18 единиц спецтехники" className="w-full rounded shadow-xl object-cover" loading="lazy" style={{ maxHeight: 420 }} />
               <div className="absolute -bottom-5 -right-5 bg-orange text-white p-5 rounded shadow-xl">
                 <div className="font-oswald font-bold text-3xl">12+</div>
                 <div className="font-golos text-sm text-white/80">лет опыта</div>

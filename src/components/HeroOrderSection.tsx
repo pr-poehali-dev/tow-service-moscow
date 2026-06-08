@@ -17,7 +17,7 @@ const HeroOrderSection = () => {
       {/* HERO */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-16">
         <div className="absolute inset-0">
-          <img src={HERO_IMAGE} alt="Эвакуатор" className="w-full h-full object-cover" />
+          <img src={HERO_IMAGE} alt="Профессиональный эвакуатор на ночной трассе — служба эвакуации автомобилей 24/7 в Москве" className="w-full h-full object-cover" loading="eager" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, hsl(215,75%,8%) 40%, hsl(215,70%,15%) 65%, transparent 100%)" }} />
         </div>
 
