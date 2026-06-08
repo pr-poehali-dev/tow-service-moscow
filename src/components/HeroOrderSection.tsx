@@ -1,17 +1,8 @@
-import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/78d64023-9129-4f67-afe6-fe08698073c3/files/ca47588b-ef58-4726-8972-9d7e43718ccd.jpg";
 
 const HeroOrderSection = () => {
-  const [form, setForm] = useState({ name: "", phone: "", address: "", comment: "" });
-  const [formSent, setFormSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSent(true);
-  };
-
   return (
     <>
       {/* HERO */}
@@ -40,9 +31,9 @@ const HeroOrderSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#order" className="btn-primary">
+              <a href="tel:+79854427547" className="btn-primary">
                 <Icon name="PhoneCall" size={18} />
-                Заказать эвакуатор
+                +7 (985) 442-75-47
               </a>
               <a href="#price" className="btn-outline">
                 <Icon name="List" size={18} />
@@ -66,70 +57,36 @@ const HeroOrderSection = () => {
         </div>
       </section>
 
-      {/* ORDER FORM */}
+      {/* CALL TO ACTION */}
       <section id="order" className="py-24 bg-navy-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)", backgroundSize: "30px 30px" }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="section-divider" />
-              <h2 className="font-oswald font-bold text-white text-4xl uppercase tracking-wide mb-4">Заказать эвакуатор</h2>
-              <p className="text-white/65 text-lg mb-8">Оставьте заявку — диспетчер перезвонит в течение 2 минут и уточнит детали.</p>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
+          <div className="section-divider mx-auto" />
+          <h2 className="font-oswald font-bold text-white text-4xl uppercase tracking-wide mb-4">Вызвать эвакуатор</h2>
+          <p className="text-white/65 text-lg mb-10 max-w-2xl mx-auto">
+            Звоните напрямую — диспетчер на связи круглосуточно. Уточним адрес, тип авто и стоимость, эвакуатор выезжает сразу.
+          </p>
 
-              <div className="space-y-5">
-                {[
-                  { n: "1", title: "Оставьте заявку", sub: "Заполните форму или позвоните напрямую" },
-                  { n: "2", title: "Диспетчер уточняет детали", sub: "Адрес, тип ТС, маршрут и стоимость — за 2 минуты" },
-                  { n: "3", title: "Выезд эвакуатора", sub: "Прибытие в течение 30 минут в черте города" },
-                ].map((step, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="font-oswald font-bold text-white text-sm">{step.n}</span>
-                    </div>
-                    <div>
-                      <div className="font-oswald font-semibold text-white text-lg uppercase">{step.title}</div>
-                      <div className="text-white/55 text-sm">{step.sub}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <a
+            href="tel:+79854427547"
+            className="inline-flex items-center gap-3 bg-orange hover:bg-orange/90 transition-colors rounded px-8 py-6 shadow-2xl hover:scale-[1.02] duration-200"
+          >
+            <Icon name="PhoneCall" size={32} className="text-white" />
+            <span className="font-oswald font-bold text-white text-3xl md:text-4xl tracking-wide">+7 (985) 442-75-47</span>
+          </a>
+
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-10">
+            <div className="flex items-center gap-2 text-white/70">
+              <Icon name="Clock" size={18} className="text-orange" />
+              <span className="font-golos text-sm">Работаем 24/7</span>
             </div>
-
-            <div className="bg-white rounded p-8 shadow-2xl">
-              {formSent ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="CheckCircle2" size={32} className="text-green-600" />
-                  </div>
-                  <h3 className="font-oswald font-bold text-navy text-2xl uppercase mb-2">Заявка принята!</h3>
-                  <p className="text-muted-foreground">Диспетчер перезвонит вам в течение 2 минут.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="font-oswald font-bold text-navy text-2xl uppercase tracking-wide mb-2">Форма заказа</h3>
-                  <div>
-                    <label className="block text-sm font-golos font-medium text-navy mb-1.5">Ваше имя *</label>
-                    <input className="input-field" placeholder="Иван Петров" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-golos font-medium text-navy mb-1.5">Номер телефона *</label>
-                    <input className="input-field" placeholder="+7 (___) ___-__-__" type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-golos font-medium text-navy mb-1.5">Адрес нахождения автомобиля *</label>
-                    <input className="input-field" placeholder="ул. Ленина, 45 или координаты" value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-golos font-medium text-navy mb-1.5">Комментарий</label>
-                    <textarea className="input-field resize-none" rows={3} placeholder="Марка и модель авто, особые условия..." value={form.comment} onChange={e => setForm({ ...form, comment: e.target.value })} />
-                  </div>
-                  <button type="submit" className="btn-primary w-full justify-center">
-                    <Icon name="Send" size={16} />
-                    Отправить заявку
-                  </button>
-                  <p className="text-xs text-muted-foreground text-center">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-                </form>
-              )}
+            <div className="flex items-center gap-2 text-white/70">
+              <Icon name="Timer" size={18} className="text-orange" />
+              <span className="font-golos text-sm">Выезд за 30 минут</span>
+            </div>
+            <div className="flex items-center gap-2 text-white/70">
+              <Icon name="MapPin" size={18} className="text-orange" />
+              <span className="font-golos text-sm">Москва и область</span>
             </div>
           </div>
         </div>

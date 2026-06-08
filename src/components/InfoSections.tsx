@@ -187,9 +187,9 @@ const InfoSections = () => {
               <div className="font-oswald font-bold text-white text-xl uppercase tracking-wide">Вашего района нет в списке?</div>
               <p className="text-white/60 text-sm mt-1">Позвоните — выезжаем по всей Москве, области и федеральным трассам.</p>
             </div>
-            <a href="tel:+74951234567" className="btn-primary whitespace-nowrap">
+            <a href="tel:+79854427547" className="btn-primary whitespace-nowrap">
               <Icon name="PhoneCall" size={18} />
-              Вызвать эвакуатор
+              +7 (985) 442-75-47
             </a>
           </div>
         </div>

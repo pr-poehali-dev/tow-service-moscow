@@ -38,9 +38,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+74951234567" className="flex items-center gap-2 text-white font-oswald font-semibold text-lg tracking-wide hover:text-orange transition-colors">
+            <a href="tel:+79854427547" className="flex items-center gap-2 text-white font-oswald font-semibold text-lg tracking-wide hover:text-orange transition-colors">
               <Icon name="Phone" size={16} className="text-orange" />
-              +7 (495) 123-45-67
+              +7 (985) 442-75-47
             </a>
           </div>
 
@@ -57,9 +57,9 @@ const Header = () => {
               <a key={link.href} href={link.href} className="nav-link py-1" onClick={() => setMobileMenuOpen(false)}>{link.label}</a>
             ))}
           </nav>
-          <a href="tel:+74951234567" className="flex items-center gap-2 text-white font-oswald font-semibold text-lg mt-4">
+          <a href="tel:+79854427547" className="flex items-center gap-2 text-white font-oswald font-semibold text-lg mt-4">
             <Icon name="Phone" size={16} className="text-orange" />
-            +7 (495) 123-45-67
+            +7 (985) 442-75-47
           </a>
         </div>
       )}

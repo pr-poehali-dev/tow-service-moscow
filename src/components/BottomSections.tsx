@@ -113,7 +113,7 @@ const BottomSections = () => {
                 icon: "Phone", title: "Телефон",
                 content: (
                   <>
-                    <a href="tel:+74951234567" className="font-oswald font-bold text-navy text-2xl hover:text-orange transition-colors block">+7 (495) 123-45-67</a>
+                    <a href="tel:+79854427547" className="font-oswald font-bold text-navy text-2xl hover:text-orange transition-colors block">+7 (985) 442-75-47</a>
                     <span className="text-sm text-muted-foreground">Круглосуточно, 24/7</span>
                   </>
                 )
@@ -180,8 +180,8 @@ const BottomSections = () => {
                 <a key={link.href} href={link.href} className="text-white/50 text-sm font-golos hover:text-white transition-colors">{link.label}</a>
               ))}
             </nav>
-            <a href="tel:+74951234567" className="font-oswald font-bold text-white text-xl hover:text-orange transition-colors">
-              +7 (495) 123-45-67
+            <a href="tel:+79854427547" className="font-oswald font-bold text-white text-xl hover:text-orange transition-colors">
+              +7 (985) 442-75-47
             </a>
           </div>
         </div>
