@@ -30,6 +30,15 @@ const GUARANTEES = [
   { icon: "FileText", title: "Официальный договор", desc: "Работаем по договору. Закрывающие документы для юридических лиц в течение 3 дней." },
 ];
 
+const ZONES = [
+  { name: "Новая Рига", desc: "Эвакуатор на Новорижском шоссе и в коттеджных посёлках вдоль трассы." },
+  { name: "Ярославское шоссе", desc: "Срочный выезд на Ярославское шоссе и Северо-Восток Подмосковья." },
+  { name: "Москва в пределах МКАД", desc: "Любой район столицы — прибытие за 30 минут круглосуточно." },
+  { name: "Подмосковье", desc: "Все направления области в радиусе 500 км от Москвы." },
+  { name: "Федеральные трассы", desc: "М-1, М-7, М-8, М-9, М-10 и другие магистрали." },
+  { name: "Аэропорты и вокзалы", desc: "Шереметьево, Домодедово, Внуково и крупные транспортные узлы." },
+];
+
 const InfoSections = () => {
   return (
     <>
@@ -146,6 +155,42 @@ const InfoSections = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">{g.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ZONES */}
+      <section id="zones" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="mb-14">
+            <div className="section-divider" />
+            <h2 className="font-oswald font-bold text-navy text-4xl uppercase tracking-wide mb-3">Зоны выезда</h2>
+            <p className="text-muted-foreground max-w-xl">Вызвать эвакуатор срочно можно в любую точку Москвы и Подмосковья — работаем по всем основным направлениям круглосуточно.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ZONES.map((z, i) => (
+              <div key={i} className="hover-lift border border-border rounded p-6 bg-white flex items-start gap-4">
+                <div className="w-11 h-11 bg-orange/10 rounded flex items-center justify-center flex-shrink-0">
+                  <Icon name="MapPin" size={20} className="text-orange" />
+                </div>
+                <div>
+                  <h3 className="font-oswald font-semibold text-navy text-lg uppercase tracking-wide mb-1.5">{z.name}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{z.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-navy-dark rounded p-6">
+            <div className="flex-1">
+              <div className="font-oswald font-bold text-white text-xl uppercase tracking-wide">Вашего района нет в списке?</div>
+              <p className="text-white/60 text-sm mt-1">Позвоните — выезжаем по всей Москве, области и федеральным трассам.</p>
+            </div>
+            <a href="tel:+74951234567" className="btn-primary whitespace-nowrap">
+              <Icon name="PhoneCall" size={18} />
+              Вызвать эвакуатор
+            </a>
           </div>
         </div>
       </section>

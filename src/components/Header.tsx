@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "О компании", href: "#about" },
   { label: "Прайс", href: "#price" },
   { label: "Гарантии", href: "#guarantees" },
+  { label: "Зоны выезда", href: "#zones" },
   { label: "Отзывы", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
   { label: "Контакты", href: "#contacts" },
